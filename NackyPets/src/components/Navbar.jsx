@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { link } from "react-scroll";
-import { FaTime} from "react-icons/fa";
-import { CimenuFries} from "react-icons/ci";
+import { FaTime } from "react-icons/fa";
+import { CimenuFries } from "react-icons/ci";
 
 
 
 
 const Navbar = () => {
     const [click, setClick] = useState(false);
+    const handleClick = () => {setClick(!click);}
     const content = <>
         <div className="lg:hidden md:hidden block absolute top-16 w-full left-0 right-0 bg-slate-900 transition ">
             <ul className="text-center text-xl p-20">
@@ -59,8 +60,8 @@ const Navbar = () => {
                 <div>
                     {click && content}
                 </div>
-                <button className="block sm:hidden transtion ">
-                    {click, ? <FaTime/> : <CimenuFries/> }
+                <button className="block sm:hidden transtion" onClick={handleClick}>
+                    {click, ? <FaTime /> : <CimenuFries />}
                 </button>
             </div>
 
